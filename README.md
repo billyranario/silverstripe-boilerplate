@@ -28,6 +28,7 @@ Navigate to the project root where the `docker-compose.yml` file is located and 
 ```bash
 ./run.sh --build
 ```
+Adding `--build` flag will create a .env file for the project.
 
 ### Running the Project
 
