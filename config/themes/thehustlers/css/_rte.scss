@@ -1,0 +1,12 @@
+.rte h1,
+.rte h2,
+.rte h3,
+.rte h4,
+.rte h5,
+.rte h6 {
+    @apply first:!mt-0 !mt-10 !mb-5
+}
+
+.rte {
+    @apply space-y-4 text-base
+}

@@ -1,0 +1,19 @@
+{
+    "name": "thehustle-silverstripe",
+    "version": "1.0.0",
+    "description": "Silverstripe Theme",
+    "author": "The Hustle | Billy Joel Ranario",
+    "license": "MIT",
+    "scripts": {
+      "build:css": "npx tailwindcss -i themes/thehustlers/css/main.scss -o themes/thehustlers/dist/styles.min.css --minify",
+      "watch:css": "npx tailwindcss -i themes/thehustlers/css/main.scss -o themes/thehustlers/dist/styles.min.css --minify --watch"
+    },
+    "dependencies": {
+      "autoprefixer": "^10.4.19",
+      "postcss": "^8.4.40",
+      "postcss-cli": "^11.0.0",
+      "sass": "^1.77.8",
+      "tailwindcss": "^3.4.7"
+    }
+  }
+  

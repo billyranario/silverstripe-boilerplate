@@ -1,0 +1,29 @@
+{
+    "name": "silverstripe-themes/thehustlers",
+    "description": "The Hustle Custom Theme",
+    "type": "silverstripe-theme",
+    "keywords": [
+        "silverstripe",
+        "theme"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "The Hustle",
+            "homepage": "https://thehustle.nz"
+        }
+    ],
+    "require": {
+        "composer/installers": "*",
+        "silverstripe/framework": ">=3.5"
+    },
+    "extra": {
+        "expose": [
+            "css",
+            "images",
+            "javascript",
+            "webfonts",
+            "dist"
+        ]
+    }
+}

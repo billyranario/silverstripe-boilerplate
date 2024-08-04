@@ -1,0 +1,31 @@
+---
+Name: myproject
+---
+SilverStripe\Core\Manifest\ModuleManifest:
+  project: app
+
+# UTF8MB4 has limited support in older MySQL versions.
+# Remove this configuration if you experience issues.
+---
+Name: myproject-database
+---
+SilverStripe\ORM\Connect\MySQLDatabase:
+  connection_charset: utf8mb4
+  connection_collation: utf8mb4_unicode_ci
+  charset: utf8mb4
+  collation: utf8mb4_unicode_ci
+
+SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
+  default_spam_protector: UndefinedOffset\NoCaptcha\Forms\NocaptchaProtector
+
+UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
+  site_key: "6LdCdB4qAAAAAFY8S7vIuECbwCEzrcOPLabGm0LR"
+  secret_key: "6LdCdB4qAAAAAMlMGWCBev8Pdf6JW1vVrqa9TOZe"
+  recaptcha_version: 3
+  minimum_score: 0.8
+  verify_ssl: true #Allows you to disable php-curl's SSL peer verification by setting this to false (optional, defaults to true)
+  default_theme: "light" #Default theme color (optional, light or dark, defaults to light)
+  default_type: "image" #Default captcha type (optional, image or audio, defaults to image)
+  default_size: "normal" #Default size (optional, normal, compact or invisible, defaults to normal)
+  default_badge: "bottomright" #Default badge position (bottomright, bottomleft or inline, defaults to bottomright)
+  default_handle_submit: true
