@@ -17,7 +17,6 @@ Make sure you have the following installed on your machine:
 Clone the repository using the following command:
 
 ```bash
-// update this
 git clone git@github.com:billyranario/silverstripe-boilerplate.git
 cd silverstripe-boilerplate
 ```
