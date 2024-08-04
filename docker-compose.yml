@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    container_name: silverstripe-web
+    ports:
+      - "9900:80"
+    volumes:
+      - ./html:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: silverstripe-php
+    volumes:
+      - ./html:/var/www/html
+      - ./php.ini:/usr/local/etc/php/php.ini
+    environment:
+      - COMPOSER_ALLOW_SUPERUSER=1
+    working_dir: /var/www/html
+    command: >
+      sh -c "if [ ! -f /var/www/html/composer.json ]; then composer create-project silverstripe/installer . /var/www/html; fi && php-fpm"
+
+  db:
+    image: mysql:5.7
+    container_name: silverstripe-db
+    platform: linux/x86_64
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: southpropertydb
+      MYSQL_USER: southproperty
+      MYSQL_PASSWORD: password
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    platform: linux/x86_64
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "9901:80"
+    depends_on:
+      - db
+
+volumes:
+  db-data:
