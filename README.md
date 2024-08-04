@@ -1,7 +1,7 @@
 
-# SouthProperty SilverStripe Project
+# SilverStripe Boilerplate Project For Docker
 
-This repository contains the SilverStripe project for SouthProperty.
+This repository contains Boilerplate for the SilverStripe project.
 
 ## Getting Started
 
@@ -17,8 +17,9 @@ Make sure you have the following installed on your machine:
 Clone the repository using the following command:
 
 ```bash
-git clone git@bitbucket.org:thehustledev/southproperty-silverstripe.git
-cd southproperty-silverstripe
+// update this
+git clone git@github.com:billyranario/silverstripe-boilerplate.git
+cd silverstripe-boilerplate
 ```
 
 ### Building the Project
@@ -61,7 +62,7 @@ npm install
 If you need to run Composer commands inside the PHP container, use the following command to access the container:
 
 ```bash
-docker exec -it silverstripe-php bash
+docker exec -it app-server bash
 ```
 
 Once inside the container, you can run Composer commands as needed:

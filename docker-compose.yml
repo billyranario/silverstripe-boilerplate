@@ -16,7 +16,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: silverstripe-php
+    container_name: app-server
     volumes:
       - ./html:/var/www/html
       - ./php.ini:/usr/local/etc/php/php.ini
@@ -28,7 +28,7 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: silverstripe-db
+    container_name: app-db
     platform: linux/x86_64
     environment:
       MYSQL_ROOT_PASSWORD: password
