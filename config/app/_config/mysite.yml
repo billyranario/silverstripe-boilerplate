@@ -19,8 +19,8 @@ SilverStripe\SpamProtection\Extension\FormSpamProtectionExtension:
   default_spam_protector: UndefinedOffset\NoCaptcha\Forms\NocaptchaProtector
 
 UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
-  site_key: "6LdCdB4qAAAAAFY8S7vIuECbwCEzrcOPLabGm0LR"
-  secret_key: "6LdCdB4qAAAAAMlMGWCBev8Pdf6JW1vVrqa9TOZe"
+  site_key: "xxxxxxxxxx"
+  secret_key: "xxxxxxxxxx"
   recaptcha_version: 3
   minimum_score: 0.8
   verify_ssl: true #Allows you to disable php-curl's SSL peer verification by setting this to false (optional, defaults to true)
