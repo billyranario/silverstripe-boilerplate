@@ -16,7 +16,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: app-server
+    container_name: silverstripe-php
     volumes:
       - ./html:/var/www/html
       - ./php.ini:/usr/local/etc/php/php.ini
