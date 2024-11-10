@@ -52,6 +52,8 @@ services:
       - "9911:80"
     depends_on:
       - db
+    volumes:
+      - ./phpmyadmin.ini:/usr/local/etc/php/conf.d/phpmyadmin.ini
 
 volumes:
   db-data:
