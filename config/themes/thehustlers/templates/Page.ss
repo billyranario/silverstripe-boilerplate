@@ -3,9 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$SiteConfig.Title</title>
+    <title><% if $Title >% $Title | <% end_if %>$SiteConfig.Title</title>
+
+    <% if $MetaDescription %>
+    <meta name="description" content="$MetaDescription">
+    <% else %>
     <meta name="description" content="$SiteConfig.Tagline">
-    <link rel="icon" type="image/svg+xml" href="$themedResourceURL('images/favicon.svg')" />
+    <% end_if %>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="$Title" />
+    <meta property="og:description" content="$MetaDescription" />
+    <meta property="og:site_name" content="$SiteConfig.Title" />
+    <meta property="og:url" content="$AbsoluteLink" />
+
+    <% if $SiteConfig.Favicon %>
+		<link rel="shortcut icon" href="$SiteConfig.Favicon.URL">
+    <% else %>
+    <link rel="shortcut icon" href="$themedResourceURL('images/favicon.ico')">
+    <% end_if %>
+    
     <!-- Styles -->
     <link
       rel="stylesheet"
