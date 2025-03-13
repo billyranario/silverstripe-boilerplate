@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><% if $Title >% $Title | <% end_if %>$SiteConfig.Title</title>
+    <title><% if $Title %> $Title | <% end_if %>$SiteConfig.Title</title>
 
     <% if $MetaDescription %>
     <meta name="description" content="$MetaDescription">
@@ -22,7 +22,7 @@
     <% else %>
     <link rel="shortcut icon" href="$themedResourceURL('images/favicon.ico')">
     <% end_if %>
-    
+
     <!-- Styles -->
     <link
       rel="stylesheet"
