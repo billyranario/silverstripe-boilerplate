@@ -7,6 +7,15 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\TreeDropdownField;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
+use SilverStripe\Forms\GridField\GridFieldConfig;
+use Symbiote\GridFieldExtensions\GridFieldAddNewInlineButton;
+use Symbiote\GridFieldExtensions\GridFieldEditableColumns;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use SilverStripe\Forms\GridField\GridFieldDeleteAction;
+use SilverStripe\Forms\GridField\GridFieldToolbarHeader;
 
 class GlobalSettingsExtension extends Extension
 {
@@ -16,9 +25,9 @@ class GlobalSettingsExtension extends Extension
         'Email' => 'Varchar(100)',
         'Address' => 'Text',
     ];
-
+    
     private static $many_many = [
-        'FooterMenu' => SiteTree::class,
+        'FooterMenuItems' => SiteTree::class
     ];
 
     private static $has_one = [
@@ -46,6 +55,38 @@ class GlobalSettingsExtension extends Extension
         $fields->addFieldToTab('Root.Main', UploadField::create('Favicon', 'Favicon')
             ->setFolderName('Favicons')
             ->setAllowedFileCategories('image'));
+
+        // Footer Menu
+        $footerMenuConfig = GridFieldConfig::create()
+            ->addComponent(new GridFieldToolbarHeader())
+            ->addComponent(new GridFieldEditableColumns())
+            ->addComponent(new GridFieldDeleteAction())
+            ->addComponent(new GridFieldOrderableRows('SortOrder'))
+            ->addComponent(new GridFieldAddNewInlineButton('toolbar-header-right')) // Inline add (no redirect)
+            ->addComponent(new GridFieldAddExistingAutocompleter());
+
+        $footerMenuColumns = $footerMenuConfig->getComponentByType(GridFieldEditableColumns::class);
+        $footerMenuColumns->setDisplayFields([
+            'PageLinkID' => [
+                'title' => 'Page',
+                'callback' => function ($record, $column, $grid) {
+                    if ($record->exists()) {
+                        return TreeDropdownField::create($column, 'Page', SiteTree::class)
+                            ->setForm($grid->getForm());
+                    }
+                    return TextField::create($column, 'Page')
+                        ->setReadonly(true)
+                        ->setAttribute('value', 'Save the record first to select a page.');
+                }
+            ]
+        ]);
+
+        $fields->addFieldToTab("Root.FooterMenu", GridField::create(
+            "FooterMenuItems",
+            "Footer Menu",
+            $this->owner->FooterMenuItems(),
+            $footerMenuConfig
+        ));
     }
 
     public function onAfterWrite(): void
