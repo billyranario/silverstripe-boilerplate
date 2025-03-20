@@ -27,7 +27,7 @@ class GlobalSettingsExtension extends Extension
     ];
     
     private static $many_many = [
-        'FooterMenuItems' => SiteTree::class
+        'FooterMenuItems' => FooterMenuItems::class
     ];
 
     private static $has_one = [
