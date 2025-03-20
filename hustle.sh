@@ -118,7 +118,7 @@ case "$1" in
       docker-compose down
     fi
     ;;
-  *)
+  up)
     # Default to starting the containers without building
     docker-compose up -d
     ;;
