@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     libicu-dev \
     libpng-dev \
     libjpeg-dev \
-    && docker-php-ext-configure gd --with-jpeg \
+    libwebp-dev \
+    && docker-php-ext-configure gd --with-jpeg --with-webp \
     && docker-php-ext-install intl pdo pdo_mysql mysqli gd
 
 # Install Composer
