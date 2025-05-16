@@ -89,8 +89,11 @@ case "$1" in
         dnadesign/silverstripe-elemental-userforms:^4.1 \
         undefinedoffset/sortablegridfield:^2.2 \
         undefinedoffset/silverstripe-nocaptcha:^2.4 \
-        silverstripe/tagfield:^3.2 \
-        sendgrid/sendgrid:^8.1
+        silverstripe/tagfield:^3.3 \
+        sendgrid/sendgrid:^8.1 \
+        unclecheese/display-logic:^3.0 \
+        colymba/gridfield-bulk-editing-tools:^4.1 \
+        silverstripe/linkfield:^4.1
       echo "Composer packages installed."
 
       # Run dev/build flush
