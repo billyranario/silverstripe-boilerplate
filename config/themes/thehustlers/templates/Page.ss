@@ -24,8 +24,8 @@
     <meta name="keywords" content="$MetaKeywords" />
     <% end_if %>
 
-    <% if $MetaTags %>
-    <meta name="tags" content="$MetaTags" />
+    <% if $MetaCustomTags %>
+    <meta name="tags" content="$MetaCustomTags" />
     <% end_if %>
 
     <!-- Open Graph / Facebook -->
@@ -35,8 +35,8 @@
     <meta property="og:title"       content="<% if $FBTitle %>$FBTitle<% else_if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>" />
     <% if $FBDescription %>
     <meta property="og:description" content="$FBDescription" />
-    <% else_if $MetaTags %>
-    <meta property="og:description" content="$MetaTags" />
+    <% else_if $MetaCustomTags %>
+    <meta property="og:description" content="$MetaCustomTags" />
     <% end_if %>
     <% if $FBImage %>
     <meta property="og:image"       content="$FBImage.URL" />
@@ -48,8 +48,8 @@
     <meta name="twitter:title"       content="<% if $TwitterTitle %>$TwitterTitle<% else_if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>" />
     <% if $TwitterDescription %>
     <meta name="twitter:description" content="$TwitterDescription" />
-    <% else_if $MetaTags %>
-    <meta name="twitter:description" content="$MetaTags" />
+    <% else_if $MetaCustomTags %>
+    <meta name="twitter:description" content="$MetaCustomTags" />
     <% end_if %>
     <% if $TwitterImage %>
     <meta name="twitter:image"       content="$TwitterImage.URL" />
