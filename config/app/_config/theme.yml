@@ -7,7 +7,3 @@ SilverStripe\View\SSViewer:
     - '$public'
     - 'simple'
     - '$default'
-
-SilverStripe\SiteConfig\SiteConfig:
-  extensions:
-    - GlobalSettingsExtension

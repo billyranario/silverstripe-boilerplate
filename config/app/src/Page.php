@@ -22,6 +22,8 @@ namespace {
         {
             $fields = parent::getCMSFields();
 
+            $fields->removeByName(['Metadata']);
+
             $fields->addFieldToTab('Root.Images', 
                 UploadField::create('Thumbnail', 'Page Thumbnail')
                     ->setFolderName('Thumbnails')

@@ -1,0 +1,7 @@
+Page:
+  extensions:
+    - CustomMetaField
+
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - GlobalSettingsExtension

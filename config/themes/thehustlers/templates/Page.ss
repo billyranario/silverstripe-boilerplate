@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><% if $Title %> $Title | <% end_if %>$SiteConfig.Title</title>
+    <% base_tag %>
+    <title>
+      <% if $MetaTitle %>
+      $MetaTitle
+      <% else %>
+      $Title
+      <% end_if %>
+       |  $SiteConfig.Title
+    </title>
 
     <% if $MetaDescription %>
     <meta name="description" content="$MetaDescription">
@@ -11,11 +19,41 @@
     <meta name="description" content="$SiteConfig.Tagline">
     <% end_if %>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="$Title" />
-    <meta property="og:description" content="$MetaDescription" />
-    <meta property="og:site_name" content="$SiteConfig.Title" />
-    <meta property="og:url" content="$AbsoluteLink" />
+    <!-- Standard meta tags -->
+    <% if $MetaKeywords %>
+    <meta name="keywords" content="$MetaKeywords" />
+    <% end_if %>
+
+    <% if $MetaTags %>
+    <meta name="tags" content="$MetaTags" />
+    <% end_if %>
+
+    <!-- Open Graph / Facebook -->
+    <%-- Basic OG setup --%>
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="$AbsoluteLink" />
+    <meta property="og:title"       content="<% if $FBTitle %>$FBTitle<% else_if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>" />
+    <% if $FBDescription %>
+    <meta property="og:description" content="$FBDescription" />
+    <% else_if $MetaTags %>
+    <meta property="og:description" content="$MetaTags" />
+    <% end_if %>
+    <% if $FBImage %>
+    <meta property="og:image"       content="$FBImage.URL" />
+    <% end_if %>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:url"         content="$AbsoluteLink" />
+    <meta name="twitter:title"       content="<% if $TwitterTitle %>$TwitterTitle<% else_if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>" />
+    <% if $TwitterDescription %>
+    <meta name="twitter:description" content="$TwitterDescription" />
+    <% else_if $MetaTags %>
+    <meta name="twitter:description" content="$MetaTags" />
+    <% end_if %>
+    <% if $TwitterImage %>
+    <meta name="twitter:image"       content="$TwitterImage.URL" />
+    <% end_if %>
 
     <% if $SiteConfig.Favicon %>
 		<link rel="shortcut icon" href="$SiteConfig.Favicon.URL">
