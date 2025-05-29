@@ -14,4 +14,4 @@ SilverStripe\SiteConfig\SiteConfig:
 # Explicitly apply AppearanceExtension to ImageTextBlock (adjust namespace as needed)
 # ImageTextBlock:
 #   extensions:
-#     - AppearanceExtension
+#     - SpacingExtension
