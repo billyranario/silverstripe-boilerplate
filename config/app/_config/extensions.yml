@@ -5,3 +5,13 @@ Page:
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - GlobalSettingsExtension
+
+# Apply AppearanceExtension to all Elemental blocks
+# DNADesign\Elemental\Models\BaseElement:
+#   extensions:
+#     - AppearanceExtension
+
+# Explicitly apply AppearanceExtension to ImageTextBlock (adjust namespace as needed)
+# ImageTextBlock:
+#   extensions:
+#     - AppearanceExtension
