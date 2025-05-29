@@ -41,6 +41,7 @@ class CustomMetaField extends DataExtension
     public function updateCMSFields(FieldList $fields)
     {
         $fields->removeByName([
+            'Metadata',
             'MetaTitle',
             'MetaKeywords',
             'MetaCustomTags',
