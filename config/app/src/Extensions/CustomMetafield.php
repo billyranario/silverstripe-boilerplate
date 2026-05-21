@@ -8,12 +8,11 @@ use SilverStripe\Forms\CompositeField;
 use SilverStripe\Forms\ToggleCompositeField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Core\Extension;
-use SilverStripe\ORM\DataExtension;
 
 /**
  * CustomMetaField extension: add SEO and social meta fields to any DataObject, Page, or SiteConfig.
  */
-class CustomMetaField extends DataExtension
+class CustomMetaField extends Extension
 {
     private static $db = [
         'MetaTitle'       => 'Varchar(255)',
