@@ -34,11 +34,7 @@
             "app/src/Page.php",
             "app/src/PageController.php"
         ],
-        "public-files-installed": [
-            ".htaccess",
-            "index.php",
-            "web.config"
-        ]
+        "public-files-installed": []
     },
     "config": {
         "process-timeout": 600,
