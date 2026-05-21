@@ -82,18 +82,9 @@ case "$1" in
       cd ..
       echo "npm run build:css completed."
 
-      # Run composer require to add necessary packages
-      echo "Running composer require to add necessary packages..."
-      docker-compose exec php composer require \
-        dnadesign/silverstripe-elemental:^5.2 \
-        dnadesign/silverstripe-elemental-userforms:^4.1 \
-        undefinedoffset/sortablegridfield:^2.2 \
-        undefinedoffset/silverstripe-nocaptcha:^2.4 \
-        silverstripe/tagfield:^3.3 \
-        sendgrid/sendgrid:^8.1 \
-        unclecheese/display-logic:^3.0 \
-        colymba/gridfield-bulk-editing-tools:^4.1 \
-        silverstripe/linkfield:^4.1
+      # Run composer install to install all packages from composer.json
+      echo "Running composer install..."
+      docker-compose exec php composer install
       echo "Composer packages installed."
 
       # Run dev/build flush
