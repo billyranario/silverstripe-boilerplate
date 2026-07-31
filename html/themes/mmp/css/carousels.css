@@ -1,0 +1,7 @@
+.flickity-button {
+	@apply flex items-center rounded-none !bg-gold;
+}
+
+.flickity-button-icon {
+	@apply !left-1/2 !top-1/2 !h-4 -translate-x-1/2 -translate-y-1/2 fill-white;
+}

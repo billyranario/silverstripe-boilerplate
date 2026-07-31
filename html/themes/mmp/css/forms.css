@@ -1,0 +1,29 @@
+.input {
+    @apply border-gray-border w-full border px-5 py-15p outline-none focus:border-gold;
+}
+
+.form-element__form {
+    @apply inner-container my-14;
+}
+
+.form-element__form input,
+.form-element__form textarea {
+    @apply mb-5 border-gray-border w-full border px-5 py-15p outline-none focus:border-gold;
+}
+
+.form-element__form label {
+    @apply sr-only;
+}
+
+.form-element__form input[type="submit"] {
+    @apply btn mx-auto border-0 transition-all cursor-pointer hover:bg-navy;
+}
+
+/* Contact Form Gird */
+#EditableFormStep_787b0 {
+    @apply grid grid-cols-1 gap-x-5 lg:grid-cols-3;
+}
+
+#EditableFormStep_787b0 .textarea {
+    @apply col-span-full;
+}

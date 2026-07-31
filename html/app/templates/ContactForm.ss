@@ -1,0 +1,41 @@
+<% if $HeadingContent %>
+	<section class="inner-container mt-14">
+		<div class="flex flex-col items-center">
+			<% if $ShowMailIcon %>				
+				<svg
+					class="mb-6 w-16 fill-current text-gold"
+					xmlns="http://www.w3.org/2000/svg"
+					data-name="Layer 3"
+					viewBox="0 0 64 64"
+					><path
+						d="M62.591,23.193,54,16.893V10a1,1,0,0,0-1-1H43.237L32.591,1.193a1,1,0,0,0-1.182,0L20.763,9H11a1,1,0,0,0-1,1v6.893l-8.591,6.3A1,1,0,0,0,1,24V62a1,1,0,0,0,1,1H62a1,1,0,0,0,1-1V24A1,1,0,0,0,62.591,23.193ZM26.261,42.968,3,60.026V25.969ZM32,41.24,58.945,61H5.055Zm5.739,1.728L61,25.969V60.026ZM60.307,24,54,28.607V19.374ZM32,3.24,39.854,9H24.146ZM52,11V30.069L36.047,41.727l-3.456-2.534a1,1,0,0,0-1.182,0l-3.456,2.534L12,30.069V11ZM10,28.607,3.693,24,10,19.374Z"
+					></path><path
+						d="M32,31a9,9,0,1,0-9-9A9.01,9.01,0,0,0,32,31Zm0-16a7,7,0,1,1-7,7A7.008,7.008,0,0,1,32,15Z"
+					></path><path
+						d="M30,26a1,1,0,0,0,.707-.293l6-6-1.414-1.414L30,23.586l-1.293-1.293-1.414,1.414,2,2A1,1,0,0,0,30,26Z"
+					></path><rect x="21" y="33" width="16" height="2"></rect><rect
+						x="39"
+						y="33"
+						width="4"
+						height="2"
+					></rect>
+				</svg>
+			<% end_if %>
+			<div class="rte">
+				$HeadingContent
+			</div>
+		</div>
+		<div class="mx-auto my-5 h-[2px] w-32 bg-gold"></div>
+	</section>
+<% end_if %>
+<div class="inner-container">
+	<form class="pb-24 pt-14">
+		<div class="grid grid-cols-1 gap-5 lg:grid-cols-3">
+			<input class="input" placeholder="Name" type="text" />
+			<input class="input" placeholder="Email" type="text" />
+			<input class="input" placeholder="Phone" type="text" />
+			<textarea class="input col-span-full" cols="30" rows="10"></textarea>
+		</div>
+		<button class="btn mx-auto mt-8">Send A Message</button>
+	</form>
+</div>

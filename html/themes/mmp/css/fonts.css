@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Angsana New';
+    src: url('../webfonts/angsa.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Aparajita';
+    src: url('../webfonts/aparaj.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Aptos Serif';
+    src: url('../webfonts/aptos-serif.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mr Gabe Regular';
+    src: url('../webfonts/mrGabe-regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Times New Roman';
+    src: url('../webfonts/times-new-roman.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Walbaum Display';
+    src: url('../webfonts/walbaum-display-regular.ttf') format('truetype');
+}
+
+.angsana-new {
+    font-family: 'Angsana New';
+}
+
+.aparajita {
+    font-family: 'Aparajita';
+}
+
+.aptos-serif {
+    font-family: 'Aptos Serif';
+}
+
+.mr-gabe-regular {
+    font-family: 'Mr Gabe Regular';
+}
+
+.times-new-roman {
+    font-family: 'Times New Roman';
+}
+
+.walbaum-display {
+    font-family: 'Walbaum Display';
+}

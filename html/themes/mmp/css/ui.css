@@ -1,0 +1,25 @@
+.btn {
+    @apply bg-gold px-35p py-10p before:absolute before:left-1/2 before:top-1/2 before:z-0 before:h-0 before:w-full before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45 before:bg-navy before:transition-all before:duration-500 hover:before:h-[18.75rem];
+
+    color: #fff;
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-weight: bold;
+    line-height: 2.5;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.fadein-underline {
+    @apply relative;
+}
+
+.fadein-underline::before {
+    @apply block w-full h-[.125rem] absolute bottom-1 group-hover:opacity-100 opacity-0 transition-all duration-300 group-hover:bottom-0 bg-gold;
+
+    content: "";
+}

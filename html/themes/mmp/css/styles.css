@@ -1,0 +1,468 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Roboto:wght@400;700&&family=Montserrat:wght@400;600;800&family=Playfair+Display:ital@0;1&display=swap");
+/* Google Fonts — First Response block family set.
+   Kept as a SEPARATE @import so the five families above stay byte-identical.
+   Axis specs copied verbatim from the approved design; do not "tidy" them:
+   Bodoni Moda ships a variable optical-size axis (opsz 6..96) that must
+   survive, and .fr-numeral inherits weight 600 against a 400–500 range,
+   which clamps on purpose. Editing either changes the rendered result. */
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,600;1,300&display=swap");
+/* Google Fonts — "Landing Redesign" family.
+   `pdffonts` reported only "ArchivoSemiBold" embedded, but a direct
+   visual comparison of headings vs. body copy in the source PDF shows
+   body text is clearly a lighter stroke — the PDF export apparently
+   reused one subset font file for both. Headings/titles: SemiBold
+   (600). Eyebrows, labels, numbers, and body paragraphs: Regular (400). */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&display=swap");
+/* Google Fonts — "Private Vendor Counsel" (VC·26 /meeting handoff) family.
+   Single family per the build spec: EB Garamond, weights 400/500/600
+   plus 400 italic. Kept on its own line so every prior @import above
+   stays byte-identical. */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+@import "fonts";
+
+@import "flickity";
+
+@import "forms";
+@import "ui";
+@import "rte";
+@import "carousels";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-montserrat selection:bg-gold selection:text-white;
+}
+
+.inner-container {
+    @apply mx-auto max-w-[75rem] px-6 md:px-10 xl:px-15p;
+}
+
+.py-section {
+    @apply py-16 md:py-24 xl:py-28;
+}
+
+.animated-underline {
+    @apply relative inline-block after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:origin-left after:transform after:bg-gold after:transition-all after:duration-300 after:ease-in-out hover:after:w-full group-hover:after:w-full;
+}
+
+.list-square-gold li {
+    @apply relative pl-[1.0625rem] before:absolute before:left-0 before:top-1/2 before:inline-block before:h-[.3125rem] before:w-[.3125rem] before:-translate-y-1/2 before:bg-gold;
+}
+
+.heading-cut {
+    @apply relative  after:absolute after:right-0 after:top-0 after:block after:h-0 after:border-[3.75rem] after:border-t-0 after:border-b-semitransparent-white after:border-l-transparent after:border-r-semitransparent-white;
+}
+
+.animated-clip {
+    @apply relative overflow-hidden;
+}
+.animated-clip::before {
+    @apply absolute block bg-navy transition-all duration-300;
+
+    content: "";
+    top: -1px;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    clip-path: polygon(0 0, 102% 0%, 102% 102%);
+    transform-origin: top right;
+    transform: scale(0);
+    z-index: 0;
+}
+.animated-clip::after {
+    @apply absolute block bg-navy-light transition-all duration-300;
+
+    content: "";
+    top: -1px;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    clip-path: polygon(0 0, 102% 102%, 0 102%);
+    transform-origin: bottom left;
+    transform: scale(0);
+    z-index: 0;
+}
+.animated-clip:hover::before,
+.animated-clip:hover::after {
+    transform: scale(1);
+}
+.testimonial-carousel .flickity-button {
+    background-color: transparent !important;
+}
+.testimonial-carousel .flickity-button > svg {
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.bg-custom {
+    background-image: var(--bg-custom);
+}
+.simple-content h4.textLayer {
+    margin-top: 15px;
+}
+.simple-content table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e5e7eb;
+}
+
+.simple-content th,
+.simple-content td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.simple-content th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+.simple-content tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+
+.simple-content tr:hover {
+    background-color: #e5e7eb;
+}
+
+.simple-content td {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.simple-content th:first-child,
+.simple-content td:first-child {
+    border-left: 0;
+}
+
+.simple-content th:last-child,
+.simple-content td:last-child {
+    border-right: 0;
+}
+<<<<<<< HEAD
+
+=======
+>>>>>>> cdce1b4e258541cfbe835f7610ddf76966903193
+
+@media only screen and (max-width: 767px) {
+    .bg-custom {
+        background-image: var(--bg-custom-sm);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .flickity-viewport {
+        height: 520px;
+    }
+    .rte.hero h1 {
+        font-size: 2.5rem;
+    }
+    .rte.hero h1:first-of-type {
+        margin-bottom: 0;
+    }
+    .flickity-slider > div {
+        background-position-x: 50%;
+    }
+}
+
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FIRST RESPONSE BLOCKS
+   Primitives for CentredHero, Timeline, NumberedCardGrid,
+   CentredStatement and TextPairWithPanel.
+
+   Every value here is copied from the approved design. Type sizes
+   use arbitrary values rather than Tailwind's scale because the
+   source resolves rem against a 16px root while body sits at 17px
+   in pixels — snapping to the nearest scale step would shift it.
+
+   Variants: blocks render .fr-dark (default) or .fr-light. Each
+   block paints its own background so it can sit on any page.
+   ═══════════════════════════════════════════════════════════════ */
+
+.fr-section {
+    @apply font-hanken text-[17px] font-light leading-[1.72] antialiased;
+}
+.fr-dark {
+    @apply bg-graphite text-mist;
+}
+.fr-light {
+    @apply bg-porcelain text-[#4A4D52];
+}
+
+/* Hairline divider between stacked blocks (source: border-top on
+   .standard / .fee / .pair). Opt-in per block via the CMS. */
+.fr-dark.fr-ruled {
+    @apply border-t border-graphite-line;
+}
+.fr-light.fr-ruled {
+    @apply border-t border-porcelain-line;
+}
+
+.fr-wrap {
+    @apply mx-auto w-full max-w-[1020px] px-6;
+}
+
+/* ── Eyebrow label ─────────────────────────────────────────── */
+.fr-label {
+    @apply block font-hanken text-[.7rem] font-semibold uppercase tracking-[.3em];
+}
+.fr-dark .fr-label {
+    @apply text-champagne;
+}
+.fr-light .fr-label {
+    @apply text-champagne-ink;
+}
+
+/* ── Headings (Bodoni Moda) ────────────────────────────────── */
+.fr-h1,
+.fr-h2,
+.fr-h3 {
+    @apply font-bodoni font-normal leading-[1.1] tracking-[.005em];
+}
+.fr-dark .fr-h1,
+.fr-dark .fr-h2,
+.fr-dark .fr-h3 {
+    @apply text-porcelain;
+}
+.fr-light .fr-h1,
+.fr-light .fr-h2,
+.fr-light .fr-h3 {
+    @apply text-graphite;
+}
+
+.fr-h1 {
+    @apply text-[clamp(2.4rem,6vw,4.3rem)];
+}
+
+/* Italic accent inside a heading — <em> in the CMS field */
+.fr-h1 em,
+.fr-h2 em {
+    @apply italic;
+}
+.fr-dark .fr-h1 em,
+.fr-dark .fr-h2 em {
+    @apply text-champagne;
+}
+.fr-light .fr-h1 em,
+.fr-light .fr-h2 em {
+    @apply text-champagne-ink;
+}
+
+/* Bold inside body copy — <strong> in the CMS field */
+.fr-dark .fr-prose strong,
+.fr-dark .fr-lede strong {
+    @apply font-semibold text-porcelain;
+}
+.fr-light .fr-prose strong,
+.fr-light .fr-lede strong {
+    @apply font-semibold text-graphite;
+}
+
+.fr-prose p + p {
+    @apply mt-[1.1rem];
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.fr-btn {
+    @apply inline-block px-[2.1rem] py-[1.05rem] font-hanken text-[.74rem] font-semibold uppercase tracking-[.2em] no-underline;
+}
+.fr-btn-gold {
+    @apply bg-champagne text-graphite transition-colors hover:bg-champagne-deep;
+}
+.fr-light .fr-btn-gold {
+    @apply bg-champagne-ink text-porcelain hover:bg-champagne-deep;
+}
+/* Border is champagne-deep, NOT --panel-line. The source used
+   #33373D, which is 1.44:1 against the background and fails
+   WCAG 1.4.11 (3:1 for a control boundary). #A88A5C is 5.30:1.
+   To restore the original exactly, swap to border-graphite-line. */
+.fr-btn-line {
+    @apply border border-champagne-deep text-porcelain transition-colors hover:border-champagne;
+}
+.fr-light .fr-btn-line {
+    @apply border-graphite text-graphite hover:border-champagne-ink;
+}
+
+.fr-dark a:focus-visible,
+.fr-light a:focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-champagne;
+}
+
+/* ── Timeline ──────────────────────────────────────────────── */
+.fr-timeline {
+    @apply relative mx-auto max-w-[34rem] pl-[2.2rem];
+}
+.fr-timeline::before {
+    content: "";
+    @apply absolute bottom-2 left-[6px] top-2 w-px;
+}
+.fr-dark .fr-timeline::before {
+    background: linear-gradient(#a88a5c, #33373d);
+}
+.fr-light .fr-timeline::before {
+    background: linear-gradient(#a88a5c, #ded8cc);
+}
+
+.fr-moment {
+    @apply relative pb-[2.1rem] pl-[1.2rem];
+}
+.fr-moment:last-child {
+    @apply pb-0;
+}
+.fr-moment::before {
+    content: "";
+    @apply absolute left-[-2.2rem] top-[.42rem] ml-px h-[13px] w-[13px] rounded-full border-2 border-champagne;
+}
+.fr-dark .fr-moment::before {
+    @apply bg-graphite;
+}
+.fr-light .fr-moment::before {
+    @apply bg-porcelain;
+}
+
+.fr-moment-time {
+    @apply block font-bodoni text-[1.05rem] tracking-[.04em];
+}
+.fr-dark .fr-moment-time {
+    @apply text-champagne;
+}
+.fr-light .fr-moment-time {
+    @apply text-champagne-ink;
+}
+
+/* Deliberately Hanken, not Bodoni — the source overrides the h3
+   rule for .moment h3 and .card h3. Do not "correct" this. */
+.fr-moment-title,
+.fr-card-title {
+    @apply font-hanken-tight font-semibold;
+}
+.fr-dark .fr-moment-title,
+.fr-dark .fr-card-title {
+    @apply text-porcelain;
+}
+.fr-light .fr-moment-title,
+.fr-light .fr-card-title {
+    @apply text-graphite;
+}
+.fr-moment-title {
+    @apply mb-[.3rem] mt-1 text-[1rem];
+}
+
+/* ── Cards ────────────────────────────────────────────────── */
+.fr-card {
+    @apply px-[1.7rem] py-[1.9rem];
+}
+.fr-dark .fr-card {
+    @apply border border-graphite-line bg-graphite-panel;
+}
+.fr-light .fr-card {
+    @apply border border-porcelain-line bg-white;
+}
+.fr-card-title {
+    @apply mb-[.55rem] text-[1.04rem];
+}
+.fr-numeral {
+    @apply mr-[.6rem] font-bodoni;
+}
+.fr-dark .fr-numeral {
+    @apply text-champagne;
+}
+.fr-light .fr-numeral {
+    @apply text-champagne-ink;
+}
+
+/* ── Panel (privacy column) ───────────────────────────────── */
+.fr-panel {
+    @apply px-8 py-[2.2rem];
+}
+.fr-dark .fr-panel {
+    @apply border border-graphite-line bg-graphite-panel;
+}
+.fr-light .fr-panel {
+    @apply border border-porcelain-line bg-white;
+}
+
+/* ── Figure line (fee statement) ──────────────────────────── */
+.fr-figure {
+    @apply mx-auto mb-[.4rem] mt-[1.6rem] block font-bodoni text-[1.5rem] italic;
+}
+.fr-dark .fr-figure {
+    @apply text-champagne;
+}
+.fr-light .fr-figure {
+    @apply text-champagne-ink;
+}
+
+/* ── Fine print ───────────────────────────────────────────── */
+.fr-fineprint {
+    @apply mt-4 max-w-[50rem] text-[.76rem];
+}
+.fr-dark .fr-fineprint {
+    @apply text-mist-dim;
+}
+.fr-light .fr-fineprint {
+    @apply text-[#6A6D72];
+}
+
+/* ── Entrance animation ───────────────────────────────────── */
+@keyframes fr-fade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .fr-animate > * {
+        animation: fr-fade 0.9s ease both;
+    }
+    .fr-moment {
+        animation: fr-fade 0.7s ease both;
+    }
+    /* Source staggered to nth-child(4). Extended to 8 so the
+       stagger still works when an editor adds more moments. */
+    .fr-moment:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+    .fr-moment:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+    .fr-moment:nth-child(4) {
+        animation-delay: 0.3s;
+    }
+    .fr-moment:nth-child(5) {
+        animation-delay: 0.4s;
+    }
+    .fr-moment:nth-child(6) {
+        animation-delay: 0.5s;
+    }
+    .fr-moment:nth-child(7) {
+        animation-delay: 0.6s;
+    }
+    .fr-moment:nth-child(8) {
+        animation-delay: 0.7s;
+    }
+}

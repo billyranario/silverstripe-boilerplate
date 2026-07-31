@@ -1,0 +1,26 @@
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - 'MMP\Extensions\CustomSiteConfig'
+
+# Per-device margin/padding controls, scoped to the 5 First Response
+# blocks only — NOT applied to BaseElement globally, so the 22
+# existing blocks are untouched.
+CentredHero:
+  extensions:
+    - SpacingExtension
+
+Timeline:
+  extensions:
+    - SpacingExtension
+
+NumberedCardGrid:
+  extensions:
+    - SpacingExtension
+
+CentredStatement:
+  extensions:
+    - SpacingExtension
+
+TextPairWithPanel:
+  extensions:
+    - SpacingExtension

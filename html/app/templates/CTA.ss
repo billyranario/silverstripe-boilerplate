@@ -1,0 +1,58 @@
+<section class="bg-custom bg-no-repeat bg-cover" style="--bg-custom: url('$BackgroundImage.ScaleMaxWidth(1600).Link'); --bg-custom-sm: url('$BackgroundImage.FillMax(767, 928).Link');">
+	<div class="h-full w-full bg-[#0D1018] bg-opacity-60">
+		<div class="inner-container flex flex-col items-center py-28 text-center text-white">
+			<svg class="mb-5 h-16 w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.39 152.26"
+				><defs
+					><style>
+						.cls-1 {
+							fill: #1e1e1e;
+						}
+						.cls-2 {
+							fill: #8b6f4b;
+						}
+					</style></defs
+				><g id="Layer_2" data-name="Layer 2"
+					><g id="TEXT"
+						><path
+							class="cls-1"
+							d="M38.69,59.9a2.74,2.74,0,0,0-2.8,2.79v47.62a2.74,2.74,0,0,0,2.8,2.8H62a2.74,2.74,0,0,0,2.79-2.8V62.69A2.73,2.73,0,0,0,62,59.9Z"
+						/><path
+							class="cls-1"
+							d="M38.69,2.64a2.74,2.74,0,0,0-2.8,2.8v11a2.74,2.74,0,0,0,2.8,2.79H62a2.73,2.73,0,0,0,2.79-2.79v-11A2.74,2.74,0,0,0,62,2.64Z"
+						/><path
+							class="cls-1"
+							d="M84.62,61.31a2.73,2.73,0,0,0-2,3.38l11.52,46.4a2.73,2.73,0,0,0,3.38,2l22.76-5.63a2.73,2.73,0,0,0,2-3.38l-11.52-46.4a2.73,2.73,0,0,0-3.38-2Z"
+						/><path
+							class="cls-1"
+							d="M70.84,5.77a2.75,2.75,0,0,0-2,3.39L71.47,20a2.72,2.72,0,0,0,3.38,2l22.79-5.66a2.75,2.75,0,0,0,2-3.39L97,2.15a2.73,2.73,0,0,0-3.38-2Z"
+						/><path
+							class="cls-1"
+							d="M2.79,59.9A2.73,2.73,0,0,0,0,62.69v47.62a2.74,2.74,0,0,0,2.79,2.8H26.1a2.74,2.74,0,0,0,2.79-2.8V62.69A2.73,2.73,0,0,0,26.1,59.9Z"
+						/><path
+							class="cls-1"
+							d="M2.79,2.64A2.74,2.74,0,0,0,0,5.44v11A2.73,2.73,0,0,0,2.79,19.2H26.1a2.73,2.73,0,0,0,2.79-2.79v-11a2.74,2.74,0,0,0-2.79-2.8Z"
+						/><path
+							class="cls-2"
+							d="M92.17,34.51c-.69-2.8-2.06-3.73-3.73-3.32l-.12,0,2,8h0c1.58-.49,2.52-2,1.86-4.64Z"
+						/><path
+							class="cls-2"
+							d="M101.07,18.89l-28,7,8.1,32.69,28-7ZM91.21,42.77h0L92.9,49.7l-3.84.95-5.47-22L87,27.77c4.18-1,7.67.5,9,5.66v.07C97.23,38.47,95,41.52,91.21,42.77Z"
+						/><path
+							class="cls-2"
+							d="M35.89,22.58V56.26H64.78V22.58ZM56.7,51.11H52.91V37.39L50,46H50l-2.89-8.59V51.11H43.28V28.41H47.2L50,36.71l2.79-8.3H56.7Z"
+						/><path
+							class="cls-2"
+							d="M0,22.58V56.26H28.89V22.58ZM21.24,51.11H17.45V37.39L14.56,46H14.5l-2.89-8.59V51.11H7.82V28.41h3.92l2.79,8.3,2.79-8.3h3.92Z"
+						/></g
+					></g
+				>
+			</svg>
+			<div class="rte dark">
+                $Content
+            </div>
+			<a class="btn mt-11 before:bg-white hover:text-heading" href="$ButtonLink" title="$ButtonText">
+				<span class="relative z-10 font-normal">$ButtonText</span>
+			</a>
+		</div>
+	</div>
+</section>

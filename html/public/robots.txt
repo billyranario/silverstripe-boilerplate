@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /
+
+Allow: /
+Allow: /about-us/our-team
+Allow: /about-us/our-services
+Allow: /blog
+Allow: /about-us/careers
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms-of-engagement
+Allow: /client-care-rules
+Allow: /blog/post/1
+Allow: /blog/post/5
+Allow: /blog/post/6
+
+Sitemap: https://mmp.co.nz/sitemap.xml

@@ -1,1 +1,37 @@
-/html/node_modules
+# ─────────────────────────────────────────────────────────────
+# Secrets — never commit
+# ─────────────────────────────────────────────────────────────
+html/.env
+html/.env.prod
+html/.env.*
+!html/.env.example
+
+# ─────────────────────────────────────────────────────────────
+# Dependency directories (composer / npm managed)
+# ─────────────────────────────────────────────────────────────
+html/vendor/
+html/node_modules/
+html/themes/startup-theme/
+
+# ─────────────────────────────────────────────────────────────
+# Generated / user-uploaded public files
+# ─────────────────────────────────────────────────────────────
+html/public/assets/
+html/public/assets.zip
+html/public/_resources/
+html/public/_graphql/
+html/public/sitemap.xml
+
+# NOTE: html/themes/mmp/css/styles.min.css is intentionally TRACKED.
+# deploy.sh rsyncs from local, and Page.ss loads styles.min via
+# themedCSS('styles.min') — if it were ignored, a fresh clone could
+# deploy a site with no CSS. Cost is a noisy one-line diff per build.
+
+# ─────────────────────────────────────────────────────────────
+# OS / editor cruft
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+*.log
+.idea/
+.vscode/

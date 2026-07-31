@@ -1,0 +1,78 @@
+.rte {
+    @apply text-body;
+}
+
+.rte > * {
+    @apply mb-4;
+}
+
+.rte > *:last-child {
+    @apply mb-0;
+}
+
+.rte.dark > * {
+    @apply text-body-gray;
+}
+
+.rte h1,
+.rte h2,
+.rte h3,
+.rte h4,
+.rte h5,
+.rte h6 {
+    @apply mb-6 font-playfair font-bold text-heading;
+}
+
+.rte h1 {
+    @apply text-6xl;
+}
+
+.rte h2 {
+    @apply text-5xl;
+}
+
+.rte h3 {
+    @apply text-4xl;
+}
+
+.rte h4 {
+    @apply text-3xl;
+}
+
+.rte h5 {
+    @apply text-[1.5625rem];
+}
+
+.rte h6 {
+    @apply font-montserrat text-sm font-normal uppercase tracking-[0.175rem] text-gold-dark;
+}
+
+.rte ul {
+    @apply list-disc pl-8 my-6 first:mt-0;
+}
+
+.rte a {
+    @apply animated-underline inline-block;
+}
+
+/* ------ Hero ------ */
+.rte.hero {
+    @apply text-white;
+}
+
+.rte.hero h1,
+.rte.hero h2,
+.rte.hero h3,
+.rte.hero h4,
+.rte.hero h5,
+.rte.hero h6 {
+    @apply text-white;
+}
+
+.rte.hero h6 {
+    @apply mb-3 text-lg font-bold uppercase tracking-widest;
+}
+
+.rte.hero h1 {
+    @apply mb-6 font-playfair text-6xl font-bold;
+}

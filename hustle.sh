@@ -22,9 +22,9 @@ case "$1" in
     # Build and start the containers
     docker-compose up -d --build
 
-    # Show progress bar for 30 seconds
+    # Show progress bar for 60 seconds
     echo "Waiting for the build process to complete..."
-    show_progress 30
+    show_progress 60
 
     # Check if html directory is created
     if [ -d "./html" ]; then
@@ -83,18 +83,19 @@ case "$1" in
       echo "npm run build:css completed."
 
       # Run composer require to add necessary packages
-      echo "Running composer require to add necessary packages..."
+      echo "Running composer require for Silverstripe CMS 6 compatible modules..."
       docker-compose exec php composer require \
-        dnadesign/silverstripe-elemental:^5.2 \
-        dnadesign/silverstripe-elemental-userforms:^4.1 \
-        undefinedoffset/sortablegridfield:^2.2 \
-        undefinedoffset/silverstripe-nocaptcha:^2.4 \
-        silverstripe/tagfield:^3.3 \
-        sendgrid/sendgrid:^8.1 \
-        unclecheese/display-logic:^3.0 \
-        colymba/gridfield-bulk-editing-tools:^4.1 \
-        silverstripe/linkfield:^4.1
-      echo "Composer packages installed."
+        silverstripe/recipe-cms:^6 \
+        dnadesign/silverstripe-elemental:^6 \
+        dnadesign/silverstripe-elemental-userforms:^5 \
+        silverstripe/tagfield:* \
+        silverstripe/linkfield:* \
+        colymba/gridfield-bulk-editing-tools:* \
+        unclecheese/display-logic:* \
+        sendgrid/sendgrid:^8 \
+        symbiote/silverstripe-gridfieldextensions:^5 \
+        --update-with-all-dependencies
+      echo "Composer packages installed (CMS 6)."
 
       # Run dev/build flush
       echo "Running dev/build flush..."

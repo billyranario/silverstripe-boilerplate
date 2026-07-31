@@ -4,9 +4,9 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\CompositeField;
 use SilverStripe\Forms\FieldGroup;
 use SilverStripe\Forms\TextField;
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 
-class SpacingExtension extends DataExtension
+class SpacingExtension extends Extension
 {
     protected $tabPath = 'Root.Spacing';
 

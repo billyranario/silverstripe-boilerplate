@@ -1,0 +1,16 @@
+---
+Name: approutes
+After:
+  - "#rootroutes"
+  - "#coreroutes"
+---
+SilverStripe\Control\Director:
+  rules:
+    "blog/post/$ID": "BlogPostPageController"
+    "blog/category/$categoryID": "BlogPostListingPageController"
+    "blog/author/$authorID": "BlogPostListingPageController"
+    "blog/tag/$tagID": "BlogPostListingPageController"
+    "careers/job/$jobID": "JobPageController"
+    # API
+    "api/mailchimp/subscribe": "MailchimpController"
+    "api/meeting/enquiry": "MeetingEnquiryController"
