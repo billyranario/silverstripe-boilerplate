@@ -44,6 +44,17 @@ class CreateMeetingPageTask extends BuildTask
         if ($page && $page->exists()) {
             $output->writeln('Existing page found — clearing its elements before rebuild.');
             foreach ($page->ElementalArea()->Elements() as $existing) {
+                // BaseElement::delete() does NOT cascade to has_many child
+                // DataObjects (MeetingNumberedItem, MeetingTeamPick,
+                // MeetingEngagementStage, MeetingRegionTile) — without this,
+                // every re-run of this task doubles up orphaned child rows.
+                foreach (['Items', 'Picks', 'Stages', 'Tiles'] as $relation) {
+                    if ($existing->hasMethod($relation)) {
+                        foreach ($existing->$relation() as $child) {
+                            $child->delete();
+                        }
+                    }
+                }
                 $existing->delete();
             }
         } else {
@@ -203,7 +214,7 @@ class CreateMeetingPageTask extends BuildTask
 
         $tileSort = 0;
         foreach ([
-            ['Title' => 'Nelson', 'Caption' => 'CHAMBERS ON HARDY STREET', 'Alt' => 'Nelson city and Boulder Bank', 'Image' => $nelsonImage],
+            ['Title' => 'Nelson', 'Caption' => 'OFFICES ON HARDY STREET', 'Alt' => 'Nelson city and Boulder Bank', 'Image' => $nelsonImage],
             ['Title' => 'Tasman', 'Caption' => 'MAPUA TO GOLDEN BAY', 'Alt' => 'Kaiteriteri Beach, Tasman', 'Image' => $tasmanImage],
             ['Title' => 'The West Coast', 'Caption' => 'WESTPORT TO HOKITIKA', 'Alt' => 'Pancake Rocks, Punakaiki', 'Image' => $westImage],
         ] as $data) {
